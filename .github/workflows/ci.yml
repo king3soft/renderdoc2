@@ -50,6 +50,7 @@ jobs:
         fi
   clang-format:
     name: Code formatting check
+    if: contains(github.ref, 'refs/tags/*-origin/develop')
     runs-on: ubuntu-20.04
     strategy:
       fail-fast: true
