@@ -100,7 +100,7 @@ jobs:
         /tmp/cmake-2.8.12.2-Linux-i386/bin/cmake -DCMAKE_BUILD_TYPE=Debug ..
   windows:
     name: Windows
-    needs: [commit-msg, clang-format, android]
+    needs: [commit-msg, android]
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -266,7 +266,7 @@ jobs:
         fi
   android:
     name: Android
-    needs: [commit-msg, clang-format]
+    needs: [commit-msg]
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v4
