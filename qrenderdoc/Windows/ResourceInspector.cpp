@@ -370,6 +370,8 @@ void ResourceInspector::Inspect(ResourceId id)
     }
 
     m_ChunksModel->setObjects(objs);
+    if(desc->type == ResourceType::Shader)
+      SetResourceNameDisplay(m_Ctx.GetResourceName(id) + _GetHash(objs));
   }
   else
   {
